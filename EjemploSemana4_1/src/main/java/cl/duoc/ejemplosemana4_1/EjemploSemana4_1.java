@@ -39,7 +39,7 @@ public class EjemploSemana4_1 {
                         tarjeta1.setSaldoTarjeta(150000);
                         tarjeta1.setFechaEmision(LocalDate.now());
                         tarjeta1.setEstadoTarjeta("Activa");
-                        do {     
+                        do {
                             System.out.println("Ingrese fecha de vencimiento posterior a " + tarjeta1.getFechaEmision());
                             LocalDate fechaIngresa = LocalDate.parse(sc.nextLine());
                             tarjeta1.setFechaVencimiento(fechaIngresa);
@@ -50,7 +50,7 @@ public class EjemploSemana4_1 {
                         tarjeta2.setSaldoTarjeta(150000);
                         tarjeta2.setFechaEmision(LocalDate.now());
                         tarjeta2.setEstadoTarjeta("Activa");
-                        do {     
+                        do {
                             System.out.println("Ingrese fecha de vencimiento posterior a " + tarjeta2.getFechaEmision());
                             LocalDate fechaIngresa = LocalDate.parse(sc.nextLine());
                             tarjeta2.setFechaVencimiento(fechaIngresa);
@@ -62,7 +62,7 @@ public class EjemploSemana4_1 {
                         tarjeta3.setSaldoTarjeta(150000);
                         tarjeta3.setFechaEmision(LocalDate.now());
                         tarjeta3.setEstadoTarjeta("Activa");
-                        do {     
+                        do {
                             System.out.println("Ingrese fecha de vencimiento posterior a " + tarjeta1.getFechaEmision());
                             LocalDate fechaIngresa = LocalDate.parse(sc.nextLine());
                             tarjeta3.setFechaVencimiento(fechaIngresa);
@@ -74,33 +74,115 @@ public class EjemploSemana4_1 {
 
                     break;
                 case 2:
-                    if (tarjeta1.getEstadoTarjeta().equals("Activa")) {
-                        System.out.println("Ingrese rut");
-                        empleado1.setRutEmpleado(Integer.parseInt(sc.nextLine()));
-                        System.out.println("Ingrese DV:");
-                        empleado1.setDvEmpleado('k');
-                        System.out.println("Ingrese Nombre");
-                        empleado1.setNombreEmpleado(sc.nextLine());
-                        System.out.println("Ingrese Apellido");
-                        empleado1.setApellidoEmpleado(sc.nextLine());
-                        tarjeta1.setEstadoTarjeta("Asignada");
-                        empleado1.setTarjetaAsignada(tarjeta1);
-                        System.out.println(empleado1.toString());
+                    if (tarjeta1.getNumeroTarjeta() == 0 || tarjeta2.getNumeroTarjeta() == 0 || tarjeta3.getNumeroTarjeta() == 0) {
+                        System.out.println("Debe crear una tarjeta");
                     } else {
+                        if (tarjeta1.getEstadoTarjeta().equals("Activa")) {
+                            System.out.println("Ingrese rut");
+                            empleado1.setRutEmpleado(Integer.parseInt(sc.nextLine()));
+                            System.out.println("Ingrese DV:");
+                            empleado1.setDvEmpleado('k');
+                            System.out.println("Ingrese Nombre");
+                            empleado1.setNombreEmpleado(sc.nextLine());
+                            System.out.println("Ingrese Apellido");
+                            empleado1.setApellidoEmpleado(sc.nextLine());
+                            tarjeta1.setEstadoTarjeta("Asignada");
+                            empleado1.setTarjetaAsignada(tarjeta1);
+                            System.out.println(empleado1.toString());
+                        } else if (tarjeta2.getEstadoTarjeta().equals("Activa")) {
+                            System.out.println("Ingrese rut");
+                            empleado2.setRutEmpleado(Integer.parseInt(sc.nextLine()));
+                            System.out.println("Ingrese DV:");
+                            empleado2.setDvEmpleado('k');
+                            System.out.println("Ingrese Nombre");
+                            empleado2.setNombreEmpleado(sc.nextLine());
+                            System.out.println("Ingrese Apellido");
+                            empleado2.setApellidoEmpleado(sc.nextLine());
+                            tarjeta2.setEstadoTarjeta("Asignada");
+                            empleado2.setTarjetaAsignada(tarjeta2);
+                            System.out.println(empleado2.toString());
+                        } else {
+                            System.out.println("Ingrese rut");
+                            empleado3.setRutEmpleado(Integer.parseInt(sc.nextLine()));
+                            System.out.println("Ingrese DV:");
+                            empleado3.setDvEmpleado('k');
+                            
+                            do {                                
+                                System.out.println("Ingrese Nombre");
+                            empleado3.setNombreEmpleado(sc.nextLine());
+                            } while (empleado3.getNombreEmpleado().equals(""));
+                            
+                         
+                            System.out.println("Ingrese Apellido");
+                            empleado3.setApellidoEmpleado(sc.nextLine());
+                            tarjeta3.setEstadoTarjeta("Asignada");
+                            empleado3.setTarjetaAsignada(tarjeta3);
+                            System.out.println(empleado3.toString());
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.println("Ingrese rut sin DV del Empleado: ");
+                    int rut = Integer.parseInt(sc.nextLine());
+                    if (empleado1.getRutEmpleado() == rut) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int desc = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado1.getTarjetaAsignada().getSaldoTarjeta() - desc;
+                        empleado1.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else if (empleado2.getRutEmpleado() == rut) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int desc = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado2.getTarjetaAsignada().getSaldoTarjeta() - desc;
+                        empleado2.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else if (empleado3.getRutEmpleado() == rut) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int desc = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado3.getTarjetaAsignada().getSaldoTarjeta() - desc;
+                        empleado3.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else {
+                        System.out.println("Rut ingresado no encontrado");
                     }
 
                     break;
-                case 3:
-
-                    break;
                 case 4:
+                    System.out.println("Ingrese rut sin DV del Empleado: ");
+                    int rutAbono = Integer.parseInt(sc.nextLine());
+                    if (empleado1.getRutEmpleado() == rutAbono) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int abono = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado1.getTarjetaAsignada().getSaldoTarjeta() + abono;
+                        empleado1.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else if (empleado2.getRutEmpleado() == rutAbono) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int abono = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado2.getTarjetaAsignada().getSaldoTarjeta() + abono;
+                        empleado2.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else if (empleado3.getRutEmpleado() == rutAbono) {
+                        System.out.println("Ingrese el monto de descuento: ");
+                        int abono = Integer.parseInt(sc.nextLine());
+                        int nuevoSaldo = empleado3.getTarjetaAsignada().getSaldoTarjeta() + abono;
+                        empleado3.getTarjetaAsignada().setSaldoTarjeta(nuevoSaldo);
+                    } else {
+                        System.out.println("Rut ingresado no encontrado");
+                    }
 
                     break;
                 case 5:
+                    System.out.println("Ingrese rut sin DV del Empleado: ");
+                    int rutSaldo = Integer.parseInt(sc.nextLine());
+                    if (empleado1.getRutEmpleado() == rutSaldo) {
+                        System.out.println(empleado1.getTarjetaAsignada().getSaldoTarjeta());
+                    } else if (empleado2.getRutEmpleado() == rutSaldo) {
+                        System.out.println(empleado1.getTarjetaAsignada().getSaldoTarjeta());
+                    } else if (empleado3.getRutEmpleado() == rutSaldo) {
+                        System.out.println(empleado1.getTarjetaAsignada().getSaldoTarjeta());
+                    } else {
+                        System.out.println("Rut ingresado no encontrado");
+                    }
 
                     break;
                 case 6:
-
+                    System.out.println("Gracias por usar mi APP!!!");
                     break;
                 default:
                     throw new AssertionError();
