@@ -42,7 +42,7 @@ public class EjemploSemana6_2 {
                     String nombre = sc.nextLine();
                     System.out.print("Ingrese edad de la persona: ");
                     int edad = Integer.parseInt(sc.nextLine());
-                    Persona persona = new Persona(rut,nombre,edad);
+                    Persona persona = new Persona(rut, nombre, edad);
                     listaPersonas.add(persona);
                     break;
                 case 2:
@@ -55,10 +55,10 @@ public class EjemploSemana6_2 {
                             encontrado = true;
                         }
                     }
-                    if(!encontrado){
+                    if (!encontrado) {
                         System.out.println("No encontre nada");
                     }
-                    
+
                     break;
                 case 3:
                     for (Persona personaListada : listaPersonas) {
@@ -66,10 +66,39 @@ public class EjemploSemana6_2 {
                     }
                     break;
                 case 4:
-
+                    System.out.print("Ingrese el rut de la Persona a editar: ");
+                    String rutBuscadoEditar = sc.nextLine();
+                    boolean encontradoEditar = false;
+                    for (Persona listaPersona : listaPersonas) {
+                        if (listaPersona.getRutPersona().equals(rutBuscadoEditar)) {
+                            System.out.print("Ingrese Nombre de la Persona: ");
+                            String nombreEditado = sc.nextLine();
+                            System.out.print("Ingrese edad de la persona: ");
+                            int edadEditada = Integer.parseInt(sc.nextLine());
+                            listaPersona.setNombrePersona(nombreEditado);
+                            listaPersona.setEdadPersona(edadEditada);
+                            System.out.println("La persona fue Editada...");
+                            encontradoEditar = true;
+                        }
+                    }
+                    if (!encontradoEditar) {
+                        System.out.println("No encontre nada");
+                    }
                     break;
                 case 5:
-
+                    System.out.print("Ingrese el rut de la Persona a eliminar: ");
+                    String rutBuscadoEliminar = sc.nextLine();
+                    boolean encontradoEliminar = false;
+                    for (Persona listaPersona : listaPersonas) {
+                        if (listaPersona.getRutPersona().equals(rutBuscadoEliminar)) {
+                            listaPersonas.remove(listaPersona);
+                            System.out.println("La persona fue eliminada...");
+                            encontradoEliminar = true;
+                        }
+                    }
+                    if (!encontradoEliminar) {
+                        System.out.println("No encontre nada");
+                    }
                     break;
                 case 6:
                     System.out.println("Gracias por utilizar mi App!!!");
