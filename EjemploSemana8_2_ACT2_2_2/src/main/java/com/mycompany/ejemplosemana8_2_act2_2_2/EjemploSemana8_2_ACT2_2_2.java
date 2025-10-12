@@ -18,7 +18,11 @@ public class EjemploSemana8_2_ACT2_2_2 {
         Electronico electronico1 = new Electronico("LG", 12, "A001", "Pantalla Plana", 300.0);
         Electronico electronico2 = new Electronico("ASUS", 24, "A002", "Rog", 900.0);
         Electronico electronico3 = new Electronico("Nokia", 0, "A003", "Ladrillo", 100.0);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> e6e795b (Avance)
         Ropa ropa1 = new Ropa("XL", "Negro", "A004", "Polera", 5.5);
         Ropa ropa2 = new Ropa("S", "Roja", "A005", "Pantalon", 10.5);
         Ropa ropa3 = new Ropa("L", "Azul", "A006", "Camisa", 3.5);
@@ -47,7 +51,11 @@ public class EjemploSemana8_2_ACT2_2_2 {
             System.out.println("[5] Eliminar Pedido");
             System.out.println("[6] Salir");
 
+<<<<<<< HEAD
             opcMenu = MetodosValidacion.validaInt(sc);
+=======
+            opcMenu = MetodosValidación.ValidaInt(sc);
+>>>>>>> e6e795b (Avance)
 
             switch (opcMenu) {
                 case 1:
@@ -60,12 +68,18 @@ public class EjemploSemana8_2_ACT2_2_2 {
                     System.out.println("[1] Electronico");
                     System.out.println("[2] Ropa");
                     System.out.println("[4] Volver");
+<<<<<<< HEAD
 
                     opcCategoria = MetodosValidacion.validaInt(sc);
+=======
+                    
+                    opcCategoria = MetodosValidación.ValidaInt(sc);
+>>>>>>> e6e795b (Avance)
 
                     switch (opcCategoria) {
                         case 1:
                             int opcDetalle = 0;
+<<<<<<< HEAD
                             do {
                                 int index = 1;
 
@@ -98,6 +112,18 @@ public class EjemploSemana8_2_ACT2_2_2 {
                                 }
 
                             } while (opcDetalle != 4);
+=======
+                            System.out.println("##############################################");
+                            System.out.println("Seleccione un Producto:");
+                            System.out.println("[1] " + electronico1.getNombre() + " | Precio: " + electronico1.getPrecio());
+                            System.out.println("[2] " + electronico2.getNombre() + " | Precio: " + electronico2.getPrecio());
+                            System.out.println("[3] " + electronico3.getNombre() + " | Precio: " + electronico3.getPrecio());
+                            System.out.println("[4] Volver");                            
+                            opcDetalle= MetodosValidación.ValidaInt(sc);
+                            
+                            
+                           
+>>>>>>> e6e795b (Avance)
                             break;
                         case 2:
 
@@ -109,7 +135,11 @@ public class EjemploSemana8_2_ACT2_2_2 {
 
                             break;
                         default:
+<<<<<<< HEAD
                             System.out.println("Opcion ingresada fuera de rango!!!!!!");
+=======
+                            System.out.println("Opcion ingresada no valida!!!!!!");
+>>>>>>> e6e795b (Avance)
                     }
 
                     break;
@@ -129,7 +159,11 @@ public class EjemploSemana8_2_ACT2_2_2 {
 
                     break;
                 default:
+<<<<<<< HEAD
                     System.out.println("Opcion ingresada fuera de rango!!!!!!");
+=======
+                    System.out.println("opcion ingresada no valida!!!!!!");                    
+>>>>>>> e6e795b (Avance)
             }
 
         } while (opcMenu != 6);
