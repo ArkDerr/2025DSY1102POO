@@ -168,8 +168,10 @@ public class EjemploSemana8_2_ACT2_2_2 {
                                                 rutCliente = MetodosPrograma.ValidaString(sc);
 
                                                 Cliente cliente = new Cliente(nombreCliente, rutCliente);
-                                                                          
-                                                Pedido pedido = new Pedido(numeroPedido, cliente, detallePedido, MetodosPrograma.TotalPedido(detallePedido));
+                                                
+                                                double total = MetodosPrograma.TotalPedido(detallePedido);
+                                                
+                                                Pedido pedido = new Pedido(numeroPedido, cliente, detallePedido, total);
                                                 Pedidos.add(pedido);
                                                 numeroPedido++;
                                                 opcGuardarPedido=2;
@@ -217,7 +219,7 @@ public class EjemploSemana8_2_ACT2_2_2 {
                     }
                     break;
                 case 4:
-                    System.out.println("Ingrese el Numero para buscar pedido: ");
+                    System.out.println("Ingrese el Numero para Eliminar pedido: ");
                     pedidoBuscado = MetodosPrograma.ValidaInt(sc);
                     for (Pedido pedido : Pedidos) {
                         if (pedido.getNumeroPedido() == pedidoBuscado) {
