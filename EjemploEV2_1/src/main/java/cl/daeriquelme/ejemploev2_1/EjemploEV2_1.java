@@ -10,13 +10,13 @@ import java.util.Scanner;
  * @author arkder
  */
 public class EjemploEV2_1 {
-
+    
     public static void main(String[] args) {
-
+        
         Scanner sc = new Scanner(System.in);
         Catalogo ca = new Catalogo();
         int opcMenu = 0, opcTipoTour = 0;
-
+        
         do {
             System.out.println("Último Viaje S.A – Cementerio General\n"
                     + "1. Ingresar Tour: permite agregar un Tour Histórico o Cultural.\n"
@@ -26,13 +26,13 @@ public class EjemploEV2_1 {
                     + "5. Salir.");
             System.out.println("Ingrese Opción: ");
             opcMenu = Integer.parseInt(sc.nextLine());
-
+            
             switch (opcMenu) {
                 case 1:
                     int codigo = 0,
                      precioBase = 0,
                      duracionHoras = 0;
-
+                    
                     String nombre,
                      dificultad,
                      tematicaprincipal,
@@ -40,7 +40,7 @@ public class EjemploEV2_1 {
                      tipoRecorrido,
                      sectorPatrimonial,
                      idiomaGuia;
-
+                    
                     System.out.println("Creando un Tour, ingrese datos");
                     System.out.println("Codigo: ");
                     codigo = Integer.parseInt(sc.nextLine());
@@ -57,7 +57,7 @@ public class EjemploEV2_1 {
                     duracionHoras = Integer.parseInt(sc.nextLine());
                     System.out.println("Precio base: ");
                     precioBase = Integer.parseInt(sc.nextLine());
-
+                    
                     do {
                         System.out.println("Que Tour ingresará");
                         System.out.println("[1]Historico");
@@ -75,6 +75,7 @@ public class EjemploEV2_1 {
                         } while (tipoRecorrido.compareToIgnoreCase("diurno") != 0
                                 && tipoRecorrido.compareToIgnoreCase("nocturno") != 0);
                         Historico his = new Historico(tematicaprincipal, equipamiento, tipoRecorrido, codigo, precioBase, duracionHoras, nombre, dificultad);
+                        ca.calcularDescuentoTotal(his);
                         ca.agregarTour(his);
                     } else {
                         System.out.println("sector Patrimonial: ");
@@ -82,9 +83,10 @@ public class EjemploEV2_1 {
                         System.out.println("Idioma del guia: ");
                         idiomaGuia = sc.nextLine();
                         Cultural cul = new Cultural(sectorPatrimonial, idiomaGuia, codigo, precioBase, duracionHoras, nombre, dificultad);
+                        ca.calcularDescuentoTotal(cul);
                         ca.agregarTour(cul);
                     }
-
+                    
                     break;
                 case 2:
                     System.out.println("Ingrese Codigo a buscar: ");
@@ -97,7 +99,7 @@ public class EjemploEV2_1 {
                     }
                     break;
                 case 3:
-
+                    
                     break;
                 case 4:
                     System.out.println("Ingrese Codigo a buscar: ");
@@ -115,9 +117,9 @@ public class EjemploEV2_1 {
                 default:
                     System.out.println("Opcion ingresada no es valida");
             }
-
+            
         } while (opcMenu != 5);
-
+        
     }
-
+    
 }

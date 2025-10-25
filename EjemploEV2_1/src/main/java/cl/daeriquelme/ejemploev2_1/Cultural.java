@@ -93,7 +93,6 @@ public class Cultural extends Tour{
         if(idiomaGuia.equalsIgnoreCase("inglés"))
         {
             adicional=(int)(super.getPrecioBase()*(x/100));
-            super.setPrecioBase(super.getPrecioBase()+adicional);
         }
         return adicional;
     }
