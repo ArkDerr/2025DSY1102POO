@@ -8,7 +8,8 @@ package cl.daeriquelme.ejemploev2_1;
  *
  * @author arkder
  */
-public class Cultural extends Tour{
+public class Cultural extends Tour {
+
     public String sectorPatrimonial, idiomaGuia;
 
     public Cultural() {
@@ -88,16 +89,12 @@ public class Cultural extends Tour{
 
     @Override
     public int calcularCostoAdicional(int x) {
-        
-        int adicional=0;
-        if(idiomaGuia.equalsIgnoreCase("inglés"))
-        {
-            adicional=(int)(super.getPrecioBase()*(x/100));
-            super.setPrecioBase(super.getPrecioBase()+adicional);
+
+        int adicional = 0;
+        if (idiomaGuia.equalsIgnoreCase("inglés")) {
+            adicional = (int) (super.getPrecioBase() * (x / 100));
         }
         return adicional;
     }
-    
-    
-    
+
 }

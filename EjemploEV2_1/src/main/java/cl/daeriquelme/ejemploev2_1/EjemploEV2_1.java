@@ -75,13 +75,20 @@ public class EjemploEV2_1 {
                         } while (tipoRecorrido.compareToIgnoreCase("diurno") != 0
                                 && tipoRecorrido.compareToIgnoreCase("nocturno") != 0);
                         Historico his = new Historico(tematicaprincipal, equipamiento, tipoRecorrido, codigo, precioBase, duracionHoras, nombre, dificultad);
+                        System.out.println(his.calcularCostoAdicional(25));
+                        his.setPrecioBase(precioBase+his.calcularCostoAdicional(25));
+                        System.out.println(his.getPrecioBase());
+                        his.setPrecioBase((int)his.aplicarDescuento());
+                        System.out.println(his.getPrecioBase());
                         ca.agregarTour(his);
                     } else {
-                        System.out.println("sector Patrimonial: ");
+                        System.out.println("Sector Patrimonial: ");
                         sectorPatrimonial = sc.nextLine();
                         System.out.println("Idioma del guia: ");
                         idiomaGuia = sc.nextLine();
                         Cultural cul = new Cultural(sectorPatrimonial, idiomaGuia, codigo, precioBase, duracionHoras, nombre, dificultad);
+                        cul.calcularCostoAdicional(25);
+                        cul.setPrecioBase((int)cul.aplicarDescuento());
                         ca.agregarTour(cul);
                     }
 
@@ -97,6 +104,7 @@ public class EjemploEV2_1 {
                     }
                     break;
                 case 3:
+                    ca.aplicarAjusteATodos();
 
                     break;
                 case 4:
@@ -115,7 +123,6 @@ public class EjemploEV2_1 {
                 default:
                     System.out.println("Opcion ingresada no es valida");
             }
-
         } while (opcMenu != 5);
 
     }

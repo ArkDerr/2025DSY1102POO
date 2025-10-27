@@ -42,11 +42,13 @@ public class Catalogo {
     }
     
     public void aplicarAjusteATodos(){
-        
+        for (Tour tour : tours) {
+           tour.disminuirBase();
+        }
     }
     
     public void calcularDescuentoTotal(){
-        
+         
     }
     
     public boolean eliminarTour(int codigo){
