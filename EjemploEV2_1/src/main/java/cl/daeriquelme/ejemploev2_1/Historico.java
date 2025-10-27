@@ -103,9 +103,14 @@ public class Historico extends Tour{
         int adicional=0;
         if(tipoRecorrido.equalsIgnoreCase("nocturno"))
         {
+<<<<<<< HEAD
             adicional=(int)(super.getPrecioBase()*(x/100));
             return adicional;
         }   
+=======
+            adicional=(int)(super.getPrecioBase()*(x/100.0));
+        }
+>>>>>>> 744b2859d37e3af0ca57256e94aafcb5a0f36886
         return adicional;
     }
 }

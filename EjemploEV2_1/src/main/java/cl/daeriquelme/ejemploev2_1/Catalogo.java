@@ -12,7 +12,8 @@ import java.util.List;
  * @author arkder
  */
 public class Catalogo {
-    private List<Tour> tours =new ArrayList<Tour>();
+
+    private List<Tour> tours = new ArrayList<Tour>();
 
     public Catalogo() {
     }
@@ -24,22 +25,21 @@ public class Catalogo {
     public void setTours(List<Tour> tours) {
         this.tours = tours;
     }
-    
-    
+
     //Metodos:
-    
-    public void agregarTour(Tour t){
+    public void agregarTour(Tour t) {
         this.tours.add(t);
     }
-    
-    public Tour buscarTour(int codigo){
+
+    public Tour buscarTour(int codigo) {
         for (Tour tour : tours) {
-            if (tour.getCodigo()==codigo) {
+            if (tour.getCodigo() == codigo) {
                 return tour;
             }
         }
         return null;
     }
+<<<<<<< HEAD
     
     public void aplicarAjusteATodos(){
         for (Tour tour : tours) {
@@ -52,13 +52,29 @@ public class Catalogo {
     }
     
     public boolean eliminarTour(int codigo){
+=======
+
+    public void aplicarAjusteATodos() {
+>>>>>>> 744b2859d37e3af0ca57256e94aafcb5a0f36886
         for (Tour tour : tours) {
-            if (tour.getCodigo()==codigo) {
+            tour.disminuirBase();
+        }
+    }
+
+    public void calcularDescuentoTotal(Tour t) {
+        int porecioFinal = 0;
+        t.setPrecioBase(t.getPrecioBase() + t.calcularCostoAdicional(25));
+        t.setPrecioBase(t.getPrecioBase() - (int) t.aplicarDescuento());
+    }
+
+    public boolean eliminarTour(int codigo) {
+        for (Tour tour : tours) {
+            if (tour.getCodigo() == codigo) {
                 tours.remove(tour);
                 return true;
             }
         }
         return false;
     }
-    
+
 }

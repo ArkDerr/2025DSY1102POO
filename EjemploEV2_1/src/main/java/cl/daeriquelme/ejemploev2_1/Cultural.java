@@ -89,10 +89,18 @@ public class Cultural extends Tour {
 
     @Override
     public int calcularCostoAdicional(int x) {
+<<<<<<< HEAD
 
         int adicional = 0;
         if (idiomaGuia.equalsIgnoreCase("inglés")) {
             adicional = (int) (super.getPrecioBase() * (x / 100));
+=======
+        
+        int adicional=0;
+        if(idiomaGuia.equalsIgnoreCase("inglés"))
+        {
+            adicional=(int)(super.getPrecioBase()*(x/100));
+>>>>>>> 744b2859d37e3af0ca57256e94aafcb5a0f36886
         }
         return adicional;
     }
