@@ -39,7 +39,6 @@ public class Catalogo {
         }
         return null;
     }
-<<<<<<< HEAD
     
     public void aplicarAjusteATodos(){
         for (Tour tour : tours) {
@@ -49,16 +48,6 @@ public class Catalogo {
     
     public void calcularDescuentoTotal(){
          
-    }
-    
-    public boolean eliminarTour(int codigo){
-=======
-
-    public void aplicarAjusteATodos() {
->>>>>>> 744b2859d37e3af0ca57256e94aafcb5a0f36886
-        for (Tour tour : tours) {
-            tour.disminuirBase();
-        }
     }
 
     public void calcularDescuentoTotal(Tour t) {
