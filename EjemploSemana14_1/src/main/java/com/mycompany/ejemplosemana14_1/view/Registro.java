@@ -181,10 +181,10 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField txtDirecion;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtFono;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRut;
+    public javax.swing.JTextField txtDirecion;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtFono;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtRut;
     // End of variables declaration//GEN-END:variables
 }
