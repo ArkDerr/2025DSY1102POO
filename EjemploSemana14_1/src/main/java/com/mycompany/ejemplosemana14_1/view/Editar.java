@@ -179,20 +179,20 @@ public class Editar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnVolver;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnLimpiar;
+    public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField txtDirecion;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtFono;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRut;
+    public javax.swing.JTextField txtDirecion;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtFono;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtRut;
     // End of variables declaration//GEN-END:variables
 }

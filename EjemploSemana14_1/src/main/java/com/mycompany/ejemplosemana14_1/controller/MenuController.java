@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejemplosemana14_1.controller;
 
+import com.mycompany.ejemplosemana14_1.view.Editar;
+import com.mycompany.ejemplosemana14_1.view.Eliminar;
 import com.mycompany.ejemplosemana14_1.view.Listar;
 import com.mycompany.ejemplosemana14_1.view.Menu;
 import com.mycompany.ejemplosemana14_1.view.Registro;
@@ -23,6 +25,8 @@ public class MenuController {
     private void escucharEventos(){
         vista.btnRegistrar.addActionListener(e -> abrirRegistro());
         vista.btnListar.addActionListener(e -> abrirBusqueda());
+        vista.btnEditar.addActionListener(e -> abrirEditar());
+        vista.btnEleminar.addActionListener(e -> abrirEliminar());
     }
     
     private void abrirRegistro(){
@@ -42,4 +46,22 @@ public class MenuController {
         ListarController lc = new ListarController(listar);
         vista.dispose();
     }    
+
+    private void abrirEditar() {
+        Editar editar = new Editar();
+        editar.setAlwaysOnTop(true);
+        editar.setLocationRelativeTo(null);
+        editar.setVisible(true);
+        EditarController ec = new EditarController(editar);
+        vista.dispose();
+    }
+
+    private void abrirEliminar() {
+        Eliminar eliminar = new Eliminar();
+        eliminar.setAlwaysOnTop(true);
+        eliminar.setLocationRelativeTo(null);
+        eliminar.setVisible(true);
+        EliminarController ec = new EliminarController(eliminar);
+        vista.dispose();
+    }
 }

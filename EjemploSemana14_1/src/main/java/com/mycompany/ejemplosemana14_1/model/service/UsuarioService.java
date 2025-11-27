@@ -6,6 +6,7 @@ package com.mycompany.ejemplosemana14_1.model.service;
 
 import com.mycompany.ejemplosemana14_1.model.dao.UsuarioDAO;
 import com.mycompany.ejemplosemana14_1.model.dto.Usuario;
+import java.util.List;
 
 /**
  *
@@ -22,4 +23,29 @@ public class UsuarioService {
         
         usuariodao.registro(u);
     }
+    
+    public List<Usuario> ListarUsuario() throws Exception {
+        return usuariodao.listar();
+    }
+    
+    public Usuario buscarPorRut(String rut) throws Exception{
+        if (rut == null || rut.isBlank()) {
+            throw new Exception("El RUT es Obligatorio");
+        }
+        
+        return usuariodao.buscarPorRut(rut);
+    }
+    
+    public void editarUsuario(Usuario u) throws Exception{
+        if (u.getNombreCompleto()== null || u.getNombreCompleto().isBlank()) {
+            throw new Exception("El nombre es Obligatorio");
+        }
+        
+        usuariodao.actualizar(u);
+    }
+    
+    public void eliminarUsuario(String rut) throws Exception{
+        usuariodao.eliminar(rut);
+    }
+    
 }
